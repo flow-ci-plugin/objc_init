@@ -28,7 +28,7 @@ export LANG=en_US.UTF-8
 echo '===============DEFAULT ENVS======================='
 
 # 证书秘钥
-echo "\$FLOW_IOS_CERTIFICATE_PASS = $FLOW_IOS_CERTIFICATE_PASS"
+echo "\$FLOW_IOS_CERTIFICATE_PASS = "
 
 # 证书路径
 echo "\$FLOW_IOS_P12_FILE = $FLOW_IOS_P12_FILE"
