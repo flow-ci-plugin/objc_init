@@ -49,6 +49,9 @@ source $HOME/.rvm/scripts/rvm
 rvm use 2.3.0
 rvm list
 
+source $HOME/.nvm/nvm.sh
+nvm list
+
 # install xcpretty
 # gem install xcpretty
 
