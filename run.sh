@@ -58,5 +58,8 @@ source $HOME/.nvm/nvm.sh
 # 证书信息
 security find-identity -p codesigning ~/Library/Keychains/app-build.keychain
 
+# update install cocoapods
+gem install cocoapods --pre
+
 # Pods repos
 pod repo list
