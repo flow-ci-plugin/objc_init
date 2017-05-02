@@ -7,10 +7,11 @@ public: true
 tags:
   - objc
   - init
+  
 inputs:
-  - name: FLOW_VERSION
-    editable: false
+
 outputs:
+
 script_path: ./run.sh  
   
 template: |  

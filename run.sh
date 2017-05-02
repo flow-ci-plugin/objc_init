@@ -39,10 +39,6 @@ echo "\$FLOW_IOS_MOBILEPROVISION_FILE = $FLOW_IOS_MOBILEPROVISION_FILE"
 # 证书名称
 echo "\$FLOW_IOS_CODE_SIGN_IDENTITY = $FLOW_IOS_CODE_SIGN_IDENTITY"
 
-sed -i -e '1i\
-StrictHostKeyChecking  no
-' ~/.ssh/config
-
 echo '=================================================='
 
 source $HOME/.rvm/scripts/rvm
