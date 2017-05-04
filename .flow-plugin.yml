@@ -2,7 +2,7 @@
 name: objc_init
 version: 0.0.1
 language: objc
-description: Objc environment initialize
+description: "iOS 环境初始化"
 public: true
 tags:
   - objc
