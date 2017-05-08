@@ -42,7 +42,7 @@ echo "\$FLOW_IOS_CODE_SIGN_IDENTITY = $FLOW_IOS_CODE_SIGN_IDENTITY"
 echo '=================================================='
 
 source $HOME/.rvm/scripts/rvm
-rvm use 2.3.0
+rvm use 2.3.1
 rvm list
 
 source $HOME/.nvm/nvm.sh
@@ -59,3 +59,36 @@ gem install cocoapods --pre
 
 # Pods repos
 pod repo list
+
+# clean up rvm environment variables
+unset rvm_use_flag
+unset rvm_ruby_alias
+unset rvm_quiet_flag
+unset rvm_gemstone_url
+unset rvm_docs_type
+unset rvm_hook
+unset rvm_user_flag
+unset rvm_gemstone_package_file
+unset rvm_proxy
+unset rvm_ruby_global_gems_path
+unset rvm_ruby_file
+unset rvm_sticky_flag
+unset rvm_silent_flag
+unset rvm_ruby_make
+unset rvm_system_flag
+unset rvm_sdk
+unset rvm_script_name
+unset rvm_ruby_mode
+unset rvm_ruby_string
+unset rvm_ruby_configure
+unset rvm_ruby_url
+unset rvm_alias_expanded
+unset rvm_wrapper_name
+unset rvm_nightly_flag
+unset rvm_file_name
+unset rvm_ruby_make_install
+unset rvm_niceness
+unset rvm_delete_flag
+unset rvm_ruby_bits
+unset rvm_bin_flag
+unset rvm_only_path_flag
