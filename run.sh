@@ -97,6 +97,8 @@ unset rvm_only_path_flag
 # retry to import p12 and mobileprovisions
 
 cd $FLOW_CERTS_DIR
+
+echo "===============start import certs======================="
 curl -o certs_zip.zip $FLOW_CERTS_ZIP_URL
 
 # unzip certs_zip
@@ -111,10 +113,18 @@ if [[ -d "mobileprovision" ]]; then
   cp -R mobileprovision/* ${FLOW_WORKSPACE}/mobileprovision/
 fi
 
-# list certs
-ls ${FLOW_WORKSPACE}/certificate/
-ls ${FLOW_WORKSPACE}/mobileprovision/
+for cert in `ls certificate`
+do
+echo "file: ${cert}, md5: $(md5 $cert)"
+done
 
-# 重新导入证书
+for mp in `ls mobileprovision`
+do
+echo "file: ${mp}, md5: $(md5 $mp)"
+done
+
+# run import certs script
 echo "run import scripts"
 sh $FLOW_CERTS_DIR/cert.sh &> /dev/null
+echo "===============finish import certs======================="
+
