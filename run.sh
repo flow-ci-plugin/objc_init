@@ -115,12 +115,12 @@ fi
 
 for cert in `ls certificate`
 do
-echo "file: ${cert}, md5: $(md5 certificate/$cert)"
+echo "$(md5 certificate/$cert)"
 done
 
 for mp in `ls mobileprovision`
 do
-echo "file: ${mp}, md5: $(md5 mobileprovision/$mp)"
+echo "$(md5 mobileprovision/$mp)"
 done
 
 # run import certs script
