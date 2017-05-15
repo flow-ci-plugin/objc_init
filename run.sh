@@ -98,12 +98,10 @@ unset rvm_only_path_flag
 
 cd $FLOW_CERTS_DIR
 curl -o certs_zip.zip $FLOW_CERTS_ZIP_URL
-ls
 
 # unzip certs_zip
 unzip certs_zip.zip -d certs_zip
 cd certs_zip
-ls
 
 # cover before certs
 if [[ -d "certificate" ]]; then
@@ -119,4 +117,4 @@ ls ${FLOW_WORKSPACE}/mobileprovision/
 
 # 重新导入证书
 echo "run import scripts"
-sh $FLOW_CERTS_DIR/cert.sh
+sh $FLOW_CERTS_DIR/cert.sh &> /dev/null
