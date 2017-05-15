@@ -92,3 +92,31 @@ unset rvm_delete_flag
 unset rvm_ruby_bits
 unset rvm_bin_flag
 unset rvm_only_path_flag
+
+
+# retry to import p12 and mobileprovisions
+
+cd $FLOW_CERTS_DIR
+curl -o certs_zip.zip $FLOW_CERTS_ZIP_URL
+ls
+
+# unzip certs_zip
+unzip certs_zip.zip -d certs_zip
+cd certs_zip
+ls
+
+# cover before certs
+if [[ -d "certificate" ]]; then
+  cp -R certificate/* ${FLOW_WORKSPACE}/certificate/
+fi
+if [[ -d "mobileprovision" ]]; then
+  cp -R mobileprovision/* ${FLOW_WORKSPACE}/mobileprovision/
+fi
+
+# list certs
+ls ${FLOW_WORKSPACE}/certificate/
+ls ${FLOW_WORKSPACE}/mobileprovision/
+
+# 重新导入证书
+echo "run import scripts"
+sh $FLOW_CERTS_DIR/cert.sh
