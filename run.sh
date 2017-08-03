@@ -93,38 +93,40 @@ unset rvm_ruby_bits
 unset rvm_bin_flag
 unset rvm_only_path_flag
 
+curl -O -L http://developer.apple.com/certificationauthority/AppleWWDRCA.cer
+security import AppleWWDRCA.cer  -k ~/Library/Keychains/app-build.keychain -A
 
 # retry to import p12 and mobileprovisions
 
-cd $FLOW_CERTS_DIR
+# cd $FLOW_CERTS_DIR
 
-echo "===============start import certs======================="
-curl -o certs_zip.zip $FLOW_CERTS_ZIP_URL
+# echo "===============start import certs======================="
+# curl -o certs_zip.zip $FLOW_CERTS_ZIP_URL
 
 # unzip certs_zip
-unzip certs_zip.zip -d certs_zip
-cd certs_zip
+# unzip certs_zip.zip -d certs_zip
+# cd certs_zip
 
 # cover before certs
-if [[ -d "certificate" ]]; then
-  cp -R certificate/* ${FLOW_WORKSPACE}/certificate/
-fi
-if [[ -d "mobileprovision" ]]; then
-  cp -R mobileprovision/* ${FLOW_WORKSPACE}/mobileprovision/
-fi
+# if [[ -d "certificate" ]]; then
+#  cp -R certificate/* ${FLOW_WORKSPACE}/certificate/
+# fi
+# if [[ -d "mobileprovision" ]]; then
+#  cp -R mobileprovision/* ${FLOW_WORKSPACE}/mobileprovision/
+# fi
 
-for cert in `ls certificate`
-do
-echo "$(md5 certificate/$cert)"
-done
+# for cert in `ls certificate`
+# do
+#  echo "$(md5 certificate/$cert)"
+# done
 
-for mp in `ls mobileprovision`
-do
-echo "$(md5 mobileprovision/$mp)"
-done
+# for mp in `ls mobileprovision`
+# do
+#  echo "$(md5 mobileprovision/$mp)"
+# done
 
 # run import certs script
-echo "run import scripts"
-sh $FLOW_CERTS_DIR/cert.sh &> /dev/null
-echo "===============finish import certs======================="
+# echo "run import scripts"
+# sh $FLOW_CERTS_DIR/cert.sh &> /dev/null
+# echo "===============finish import certs======================="
 
